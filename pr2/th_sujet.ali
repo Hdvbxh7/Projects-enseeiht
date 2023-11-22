@@ -1,0 +1,154 @@
+V "GNAT Lib v10"
+M P W=b
+A -gnatwa
+P SS ZX
+
+RN
+RV NO_ALLOCATORS
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTION_PROPAGATION
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_LOCAL_ALLOCATORS
+RV NO_NESTED_FINALIZATION
+RV NO_RECURSION
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_ALLOCATORS_AFTER_ELABORATION
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLICIT_LOOPS
+RV SPARK_05
+
+U th_sujet%b		th_sujet.adb		ef577e3b NE OO SU
+W ada%s			ada.ads			ada.ali
+Z ada.exceptions%s	a-except.adb		a-except.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z ada.unchecked_deallocation%s
+Z lca%s			lca.adb			lca.ali
+W sda_exceptions%s	sda_exceptions.ads	sda_exceptions.ali
+Z system%s		system.ads		system.ali
+Z system.concat_3%s	s-conca3.adb		s-conca3.ali
+Z system.finalization_masters%s  s-finmas.adb	s-finmas.ali
+Z system.pool_global%s	s-pooglo.adb		s-pooglo.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
+Z system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+Z system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
+W th%s			th.adb			th.ali
+
+D ada.ads		20230707070819 76789da1 ada%s
+D a-charac.ads		20230707070819 2d3ec45b ada.characters%s
+D a-chlat1.ads		20230707070819 66457d31 ada.characters.latin_1%s
+D a-except.ads		20230707070819 a7106115 ada.exceptions%s
+D a-finali.ads		20230707070819 bf4f806b ada.finalization%s
+D a-inteio.ads		20230707070819 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20230707070819 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20230707070819 119b8fb3 ada.streams%s
+D a-string.ads		20230707070819 90ac6797 ada.strings%s
+D a-strmap.ads		20230707070819 e8bb714a ada.strings.maps%s
+D a-strunb.ads		20230707070819 1656705b ada.strings.unbounded%s
+D a-tags.ads		20230707070819 491b781d ada.tags%s
+D a-textio.ads		20230707070819 aef4d56d ada.text_io%s
+D a-tiinio.ads		20230707070819 390edddb ada.text_io.integer_io%s
+D a-unccon.ads		20230707070819 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		20230707070819 eff36322 ada.unchecked_deallocation%s
+D interfac.ads		20230707070819 5ab55268 interfaces%s
+D i-cstrea.ads		20230707070819 e53d8b8e interfaces.c_streams%s
+D lca.ads		20231118130418 bfc4481d lca%s
+D lca.adb		20231122130412 fffa52b9 lca%b
+D sda_exceptions.ads	20231109162616 58fab764 sda_exceptions%s
+D system.ads		20230707070819 4635ec04 system%s
+D s-atocou.ads		20230707070819 b45c2d8d system.atomic_counters%s
+D s-conca3.ads		20230707070819 0b705ca5 system.concat_3%s
+D s-crtl.ads		20230707070819 0ebbdb71 system.crtl%s
+D s-exctab.ads		20230707070819 54135002 system.exception_table%s
+D s-ficobl.ads		20230707070819 078245e4 system.file_control_block%s
+D s-finmas.ads		20230707070819 7811a767 system.finalization_masters%s
+D s-finroo.ads		20230707070819 4ff27390 system.finalization_root%s
+D s-memory.ads		20230707070819 597d6634 system.memory%s
+D s-parame.ads		20230707070819 48ec542b system.parameters%s
+D s-pooglo.ads		20230707070819 ede33ef8 system.pool_global%s
+D s-secsta.ads		20230707070819 20bbe636 system.secondary_stack%s
+D s-soflin.ads		20230707070819 a7318a92 system.soft_links%s
+D s-stache.ads		20230707070819 a37c21ec system.stack_checking%s
+D s-stalib.ads		20230707070819 09bd3940 system.standard_library%s
+D s-stalib.adb		20230707070819 f2fe2716 system.standard_library%b
+D s-stoele.ads		20230707070819 2dc34a04 system.storage_elements%s
+D s-stopoo.ads		20230707070819 b16154c2 system.storage_pools%s
+D s-stposu.ads		20230707070819 97a6219c system.storage_pools.subpools%s
+D s-stratt.ads		20230707070819 aedef97e system.stream_attributes%s
+D s-traent.ads		20230707070819 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20230707070819 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20230707070819 1b7d22d2 system.wch_con%s
+D th.ads		20231122145506 bc63ca49 th%s
+D th.adb		20231122151638 c26aaf4b th%b
+D th_sujet.adb		20231122151013 45272f84 th_sujet%b
+G a e
+G c Z b b [th_sujet standard 7 11 none]
+G r i none [th_sujet standard 7 11 none] [lca standard 8 9 none]
+G r i none [th_sujet standard 7 11 none] [th standard 11 9 none]
+X 1 ada.ads
+16K9*Ada 20e8 47|1r6 1r33 2r6 2r33 4r6 4r33
+X 6 a-inteio.ads
+18K13*Integer_Text_IO[14|46] 47|2w10 2r37
+X 9 a-string.ads
+16K13*Strings 35e16 47|4r10 4r37
+X 11 a-strunb.ads
+82K21*Unbounded 756e26 47|4w18 4r45
+87R9*Unbounded_String<5|43R9> 739e14 47|8r44 14r34 17r44 20r34 25r33
+92V13*Length{natural} 47|10s20
+103V13*To_Unbounded_String{87R9} 47|18r25
+116V13*To_String{string} 47|22s30
+X 13 a-textio.ads
+57K13*Text_IO 727e16 47|1w10 1r37
+264U14*New_Line 47|30s9
+465U14*Put 47|27s9 28s9
+X 14 a-tiinio.ads
+80U14*Put 47|29s9[6|18]
+X 19 lca.ads
+10P14 T_LCA
+X 21 sda_exceptions.ads
+2K9*SDA_Exceptions 6e19 47|3w6 3r37
+X 22 system.ads
+67M9*Address
+X 30 s-memory.ads
+53V13*Alloc{22|67M9} 103i<c,__gnat_malloc>22
+68U14*Free 104i<c,__gnat_free>22
+76V13*Realloc{22|67M9} 105i<c,__gnat_realloc>22
+X 37 s-stalib.adb
+93U14 Break_Start 94i<c,__gnat_break_start>22
+X 45 th.ads
+6+14 T_Cle 47|14r25
+7+14 T_Valeur 47|14r52
+8i9 Borne_Max{integer} 47|14r105
+9V23 hachage{integer} 47|14r73
+11k9*TH 78e7 47|5w6 14r21
+13A14 T_TH(19|10P14[72[47|13]]) 47|34r10[13]
+16U19 InitialiserTH 47|37s5[13]
+21U19 DetruireTH 47|41s5[13]
+36U19 EnregistrerTH 47|38s5[13] 39s5[13]
+60u19 Pour_ChaqueTH 47|33r52[13]
+X 47 th_sujet.adb
+7U11*TH_Sujet 7b11 42l5 42t13
+8V14 hachage_String_length{integer} 8b14 8>36 11l9 11t30 14r83
+8r36 Cle{11|87R9} 10r27
+13K17 TH_String_Integer[45|11] 15r13 33r34
+17V15 "+"=18:25{11|87R9} 38s23 39s23
+17a19 Item{string}
+20V14 Avec_Guillemets{string} 20b14 20>31 23t12 27s13
+20r31 S{11|87R9} 22r41
+25U15 Afficher 25b15 25>24 25>51 31l9 31t17 33r66
+25r24 Cle{11|87R9} 27r29
+25i51 Valeur{integer} 29r13
+33U15 Afficher_TH[45|60] 40s5
+34a5 Sda{45|13A14[13]} 37m19 38m19 38r19 39m19 39r19 40r17 41m16 41r16
+
