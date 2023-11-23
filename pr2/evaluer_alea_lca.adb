@@ -2,11 +2,20 @@ with Ada.Text_IO;          use Ada.Text_IO;
 with Ada.Integer_Text_IO;  use Ada.Integer_Text_IO;
 with Ada.Command_Line;     use Ada.Command_Line;
 with SDA_Exceptions;       use SDA_Exceptions;
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Alea;
+with LCA;
 
 -- Évaluer la qualité du générateur aléatoire et les LCA.
 procedure Evaluer_Alea_LCA is
 
+    package LCA_String_Integer is
+		new LCA (T_Cle => Unbounded_String, T_Valeur => Integer);
+	use LCA_String_Integer;
+
+    function "+" (Item : in String) return Unbounded_String
+		renames To_Unbounded_String;
+    
 
 	-- Afficher l'usage.
 	procedure Afficher_Usage is
@@ -70,9 +79,44 @@ procedure Evaluer_Alea_LCA is
 		package Mon_Alea is
 			new Alea (1, Borne);
 		use Mon_Alea;
-
+	Sda: T_LCA;
+	Random:Integer;
+	RandomS:Unbounded_String;
+	i_S :Unbounded_String;
+	i:Integer;
 	begin
-		null;	-- TODO à remplacer !
+		Initialiser(Sda);
+		for i in 1..Taille loop
+			Get_Random_Number(Random);
+			RandomS:=+Integer'Image(Random);
+			if not Cle_Presente(Sda,RandomS) then
+				Enregistrer(Sda,RandomS,1);
+			else
+				Enregistrer(Sda,RandomS,La_Valeur(Sda,RandomS)+1);
+			end if;
+		end loop;
+		min:=La_Valeur(Sda,RandomS);
+		max:=0;
+		i:=1;
+		if not Est_Vide(Sda) then			
+			while i<=Borne loop	
+				i_S:=+Integer'Image(i);
+				if Cle_Presente(Sda,I_S) then
+					if min>La_Valeur(Sda,I_S) then
+						min:=La_Valeur(Sda,I_S);
+					elsif max<La_Valeur(Sda,I_S)then
+						max:=La_Valeur(Sda,I_S);
+					end if;
+				else
+					min:=0;
+				end if;
+				i:=i+1;
+			end loop;
+		else
+			min:=0;
+			max:=0;
+		end if;
+	
 	end Calculer_Statistiques;
 
 
@@ -98,4 +142,9 @@ begin
 		Afficher_Variable ("Min", Min);
 		Afficher_Variable ("Max", Max);
 	end if;
+exception
+	when others => Put("Les caractéres ecrit ne sont pas des entiers");New_Line;
+				   Put("ou sont en dehors de la plage accéptée");New_Line;
+				   Put("reesayer avec un entier entre 1 et 2147483647 pour la Borne");New_Line;
+				   Put("et avec un entier entre 1 et 2147483647 pour la Taille ");  
 end Evaluer_Alea_LCA;

@@ -80,7 +80,9 @@ package body LCA is
 
 	function Cle_Presente (Sda : in T_LCA ; Cle : in T_Cle) return Boolean is
 	begin
-		if Sda.all.cle=Cle then
+		if Sda=null then
+			return False;
+		elsif Sda.all.cle=Cle then
 			return True;
 		elsif Sda.all.suivant=null then
 			return False;

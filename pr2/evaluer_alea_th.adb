@@ -2,10 +2,21 @@ with Ada.Text_IO;          use Ada.Text_IO;
 with Ada.Integer_Text_IO;  use Ada.Integer_Text_IO;
 with Ada.Command_Line;     use Ada.Command_Line;
 with SDA_Exceptions;       use SDA_Exceptions;
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Alea;
+with TH;
 
 -- Évaluer la qualité du générateur aléatoire et les TH.
 procedure Evaluer_Alea_TH is
+
+	function hachage_String_length(Cle: in Unbounded_String) return Integer is
+        begin
+            return Length(Cle);
+    end hachage_String_length;
+   
+	package TH_String_Integer is
+		new TH (T_Cle => Unbounded_String, T_Valeur => Integer, hachage =>hachage_String_length,Borne_Max => 11);
+	use TH_String_Integer;
 
 
 	-- Afficher l'usage.
