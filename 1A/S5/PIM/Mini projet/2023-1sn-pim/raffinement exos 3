@@ -1,0 +1,53 @@
+R0: Jouer au jeu du devin avec l'ordinateur
+
+Exemples
+	1- L'ordinateur choisit un nombre et vous le devinez
+	2- Vous choisissez un nombre et l'ordinateur le devine
+	0- Quitter le programme
+	Votre choix : 5
+	Choix incorrect.
+	1- L'ordinateur choisit un nombre et vous le devinez
+	2- Vous choisissez un nombre et l'ordinateur le devine
+	0- Quitter le programme
+	Votre choix : 0
+	Au revoir...
+	1- L'ordinateur choisit un nombre et vous le devinez	
+	2- Vous choisissez un nombre et l'ordinateur le devine
+	0- Quitter le programme
+	Votre choix : 1
+	1- L'ordinateur choisit un nombre et vous le devinez
+	2- Vous choisissez un nombre et l'ordinateur le devine
+	0- Quitter le programme
+	Votre choix : 2
+
+R1 : Comment "Jouer au jeu du devin avec l'ordinateur" ?
+	        Allumer<-True
+	        Repeter
+		        Proposer les differents options à l'utilisateur
+		        Traiter l'option choisi
+		Jusqu'a le jeu eteint
+		{Allumer<-FAUX}
+	        
+	        
+R2: Comment "Proposer les differents options à l'utilisateur" ?
+	Ecrire("1- L'ordinateur choisit un nombre et vous le devinez")
+	Ecrire("2- Vous choisissez un nombre et l'ordinateur le devine")
+	Ecrire("0- Quitter le programme")
+	Ecrire("votre choix:")
+	Lire(choix)
+
+R2:Comment " Traiter l'option choisi" ?
+	Selon choix Dans
+		0 => Ecrire("Au revoir...") 
+		     Alllumer<-False
+		1 => Jouer au jeu du devin avec l'ordinateur quand il choisit un nombre
+		2 => Deviner le nombre auquel pense l’utilisateur selon les règles du jeu du devin
+		autres =>Ecrire("Choix incorrect.")
+	FinSelon			
+
+
+
+
+
+
+

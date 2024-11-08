@@ -1,0 +1,20 @@
+[GENERATED OBJECT FILE]
+b__main.o
+[PROJECT FILES]
+/home/tgz8009/1A/PIM/Mini projet/2023-1sn-pim/CONTENU/PR01/mp.gpr
+20230927073253 2c779697fff337e0e5546a1463bdbe21
+[BOUND OBJECT FILES]
+/home/tgz8009/1A/PIM/Mini projet/2023-1sn-pim/CONTENU/PR01/obj/alea.o
+/home/tgz8009/1A/PIM/Mini projet/2023-1sn-pim/CONTENU/PR01/obj/main.o
+[GENERATED SOURCE FILES]
+b__main.ads
+b__main.adb
+b__main.ali
+[RESULTING OPTIONS]
+-L/home/tgz8009/1A/PIM/Mini projet/2023-1sn-pim/CONTENU/PR01/obj/
+-L/home/tgz8009/1A/PIM/Mini projet/2023-1sn-pim/CONTENU/PR01/obj/
+-L/mnt/n7fs/ens/tp_cregut/GNAT/2021/lib/gcc/x86_64-pc-linux-gnu/10.3.1/adalib/
+-static
+-static-libgcc
+/mnt/n7fs/ens/tp_cregut/GNAT/2021/lib/gcc/x86_64-pc-linux-gnu/10.3.1/adalib/libgnat.a
+-ldl

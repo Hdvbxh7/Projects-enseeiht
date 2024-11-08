@@ -1,0 +1,38 @@
+Nom       : Gutierrez
+Prénom    : Tom
+Groupe TP : E
+
+
+Consigne :  Ci-dessous, répondre à la place des « ... ».
+
+
+=====[ Temps ]==================================================================
+
+Temps passé sur la V1 : 4 heures 0 minutes
+Temps passé sur la V2 : ... heures ... minutes
+Pour la V2 on ne tiendra pas compte du temps passé sur la V1.
+Bien sûr, les temps renseignés ici ne sont pas pris en compte dans la notation.
+
+
+=====[ Questions ]==============================================================
+
+Indiquer la relation UML entre Cercle et le Point centre du cercle.
+-------------------------------------------------------------------
+
+Il y a une relation d'agrégation où le cercle est le tout et le centre une partie.
+
+
+Comment est réalisée l'exigence E18 ?
+-------------------------------------
+
+Pour réalisé l'exigence dans un get au lieu de renvoyer le point lui même, qui était la seul partie problématique  des gets,
+j'ai creer un nouveau point identique au points centrale du cercle ce qui permet d'éviter lamodification du centre du cercle à partir du get.
+
+
+
+=====[ Explications ]===========================================================
+
+(Facultatif) Donner ici les explications supplémentaires utiles à la
+compréhension du travail rendu.
+
+...

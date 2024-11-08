@@ -1,0 +1,21 @@
+JEU DU DEVIN
+
+-faire deviner un nombre entre 1 et 999
+
+-pouvoir jouer contre l'ordinateur :    -en faisant deviner	
+					-trop petit ('p' ou 'P')
+ 					-trop grand ('g' ou 'G')
+ 					-trouvé ('t' ou 'T') 
+ 					-l'ordinateur utilise la dichotomie pour trouvé
+ 					-s'arrete si triche et mets le message 
+ 					« Vous trichez. J’arrête cette partie. »	
+				     -en devinant
+				     
+-relancer une partie quand la precedente est fini
+CONTRAINTES
+-fonctionne sur les ordis de n7
+-utiliser que ls programmes fournis
+-structure en 3exos: - exos 2:faire deviner  a l'ordi
+		    - exos 1: deviner le chiffre de l'ordi
+		    -exos 3: complet
+

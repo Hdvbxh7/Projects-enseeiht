@@ -1,0 +1,104 @@
+Exercice 1
+
+1   -Module
+    -caracteristiques
+    -Specification(Interface)
+    -Implementation
+
+2 Specification du module Pile
+package P_Pile is
+        T_Pile is limited private
+
+procedure Initialiser(P: out T_Pile) with 
+	Post=>Est_Vide(P);
+procedure Empiler(P: in out T_Pile, Element in charactere) with 
+	pre=>Not Est_Plein(P);
+	post=>sommet(P)=Element:
+procedure Depiler(P: in out T_Pile) with
+	pre=>Not Est_Vide(P);
+
+Function Sommet(P: in T_Pile) return Chararacter with
+	pre=>Not Est_Vide(P);
+	
+with P_Pile; user P_Pile;
+3
+procedure Scenario_Pile is
+	 pile:T_Pile;
+	Begin
+		Initialiser(pile);
+		empiler(pile,'o');
+		empiler(pile,'k');
+		empiler(pile,'?');
+		if ((Sommet pile) ='?') then Put_Line();
+		endif;
+		Depiler(pile);
+		Depiler(pile);
+		Depiler(pile);
+		if Est_Vide(pile) then
+			Put_Line();
+		end if;
+	end Scenario_Pile;
+4
+with ...
+procedure Afficher_Entier) is
+	procedure Afficher(N: in Integer)with pre=>N>=0 is
+		 Nombre: integer;
+		 Unite:=Integer;
+		 Chiffre:Characteres;
+		 Chiffres:T_Pile;
+		Begin
+			--Empiler les chiffres de N
+			Nombre:=N;
+			Initialiser(Chiffres);
+			--Deconstruire et empiler
+			loop 
+				Unite:=Nombre + mod 10;
+				Nombre:=Nombre/10;
+				Chiffre:=Charactere'Val(Charactere'Pos(0) + Unite);
+				pragma Assert(Var Est_Plein(Chiffres));
+			exit when Nombre:=0;
+			end loop;
+			
+5
+package body T_Pile is 
+	procedure Initialiser(p:out T_Pile) is
+		Begin
+			p.taille:=0;
+	end Initialiser;
+	procedure Empiler(p:in out T_Pile,element:in) is
+		Begin
+			p.taille:=p.taille+1;
+			p.elements(p.taille):=element;
+	end Empiler;
+	procedure Depiler(p:in out T_Pile) is
+		Begin
+			p.taille:=p.taille-1;
+	end Depiler;
+	procedure  Detruire(p:in out T_Pile) is
+		Begin
+			p.taille:=0;
+	end Detruire;
+	function Est_Vide(p:in T-Pile) return boolean is
+		Begin
+			return p.taille=0;			
+	function Est_Plein(p:in T-Pile) return Boolean is
+		Begin
+			return p.taille>=Capacite;
+
+generic			
+	Type T_Element is private;
+	Capacite:Integer;
+	package Piles is
+		Type T_Pile is private;
+		.
+		.
+		.
+	private
+	Type tab_elements is array(0,Capacite) of T_element;
+	Type T_Pile is record
+		elements: Tab_Elements;
+		taille:integer;
+		0<=taille<=Capacite
+	end record
+	end P_Pile	
+			

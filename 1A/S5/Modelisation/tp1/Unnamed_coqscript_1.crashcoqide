@@ -1,0 +1,4 @@
+Require Import Naturelle.
+Section LogiqueProposition.
+Variable A B C E Y R : Prop .
+Theorem Thm_1 : ((A \/ B) -> C) -> (B -> C)

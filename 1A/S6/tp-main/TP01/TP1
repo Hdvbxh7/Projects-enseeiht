@@ -1,0 +1,134 @@
+Exercice 1
+
+1)
+Le premier étage correspond au nom de la classe. Point.java
+
+La second étage correspond aux attributs que l'on va devoir définir dans la classe susnommé dans le premiere etage et les accesseur que l'on va devoir programmer(les attributs sont privés) ce sont des get et d'autres fcts qui retourne des attributs.  
+
+ensuite le troisiéme étage correspond aux méthodes qu'il va falloir programmer dans cette classe.
+
+le dernier étage correspond a l'instanciation de la classe (son constructeur).
+
+2)?Convention ordre
+
+Exercice 2
+1)voir Exemplecomprendre.java (schema de la emoire voir python tutor)
+2)javac ExempleComprendre.java  (-verbose pour voir qu'est ce qui compile)
+3)execution:java ExempleComprendre
+p1 = (3.0, 4.0)
+p2 = (0.0, 0.0)
+Distance de p1 à p2 : 5.0
+> p1.translater(6, -2);
+p1 = (9.0, 2.0)
+> p1.setX(0);
+p1 = (0.0, 2.0)
+> p1.setY(10);
+p1 = (0.0, 10.0)
+> Point p3 = p1;
+p3 = (0.0, 10.0)
+p1 = (0.0, 10.0)
+> p3.translater(100, 100);
+p3 = (100.0, 110.0)
+p1 = (100.0, 110.0)
+> p3 = new Point(123, 321);
+p3 = (123.0, 321.0)
+p1 = (100.0, 110.0)
+> p1 = p2 = p3;
+p1 = (123.0, 321.0)
+p2 = (123.0, 321.0)
+p3 = (123.0, 321.0)
+> p1.translater(-123, -321);
+p1 = (0.0, 0.0)
+p2 = (0.0, 0.0)
+p3 = (0.0, 0.0)
+d = 5.0
+
+Test erreur:
+java ExempleComprendre.java
+error: class found on application class path: ExempleComprendre
+
+java exemplecomprendre
+Erreur : impossible de trouver ou de charger la classe principale exemplecomprendre
+Causé par : java.lang.ClassNotFoundException: exemplecomprendre
+
+java Point
+Erreur : la méthode principale est introuvable dans la classe Point, définissez la méthode principale comme suit :
+   public static void main(String[] args)
+ou une classe d'applications JavaFX doit étendre javafx.application.Application
+
+java PasDeClasse
+Erreur : impossible de trouver ou de charger la classe principale PasDeClasse
+Causé par : java.lang.ClassNotFoundException: PasDeClasse
+
+4)oui tout est bon
+
+5)dinguerie
+
+6)Oui c'est justifié car l'instanciation est mauvaise,  ce comportement permet de controler l'utilisation des programmes du module.
+
+7)ca marche a 500000 ca detruit.
+
+
+Exercice 3
+1)
+javadoc -d doc *.java (que les elements public on rajoute -private pour kes élements privé)
+balise pour la définition d'une méthode avec @ qui peuvent étre defini par le programmeur. et avec /**   */
+
+2)
+sens des parametres de translater:
+Parameters:
+dx - déplacement suivant l'axe des X
+dy - déplacement suivant l'axe des Y
+but de afficher:
+Afficher le point.
+
+3)
+https://docs.oracle.com/javase/7/docs/api/
+
+Exercice 4
+1)
+fais dans ma tête
+2)
+Voir SEgment
+
+Exercice 5
+1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

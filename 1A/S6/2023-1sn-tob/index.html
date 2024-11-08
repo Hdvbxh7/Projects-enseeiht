@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<meta name="generator" content="hevea 2.35">
+<title>ENSEEIHT 1SN  
+Déroulement du module Technologie Objet  
+Java, UML, etc.
+</title>
+<link rel="stylesheet" type="text/css" href="to-1sn-2023-deroulement-corrige.css">
+</head>
+<body >
+<!--HEVEA command line is: hevea -exec xxdate.exe listings.hva -I /home/cregut/usr/TeX/lib/tex/macros/latex/personnel xcweb.sty -fix png.hva macros.hva eleves.hva to-1sn-2023-deroulement-corrige.tex -o to-1sn-2023-deroulement-corrige.html -->
+<!--HACHA command line is: hacha to-1sn-2023-deroulement-corrige.html -o to-1sn-2023-deroulement-corrige-index.html -->
+<table class="title"><tr><td style="padding:1ex"><h1 class="titlemain">ENSEEIHT 1SN <br>
+D&#XE9;roulement du module Technologie Objet <br>
+Java, UML, etc.</h1><h3 class="titlerest">21&#X2004;&#X200D;janvier&#X2004;&#X200D;2024</h3></td></tr>
+</table><p>Ce document d&#XE9;crit le d&#XE9;roulement chronologique du cours de Technologie Objet
+dispens&#XE9; &#XE0; l&#X2019;ENSEEIHT en 1i&#XE8;re ann&#XE9;e Sciences du Num&#XE9;rique (1SN).</p><p>Les sujets sont disponibles au format PDF (pdf).
+</p><p>Les programmes donn&#XE9;s ont &#XE9;t&#XE9; test&#XE9;s en utilisant le JDK (version 8 ou 11).
+Nous nous limiterons cependant aux concepts pr&#XE9;sents dans la version 1.7 du
+langage Java (Java 7).</p><p>Vous avez &#XE0; votre disposition une version de ce document sous la forme
+d&#X2019;<a href="to-1sn-2023-deroulement-corrige.html">un seul fichier HTML</a> et
+<a href="index.html">une version d&#XE9;coup&#XE9;e en parties</a>.</p><p>Ce document et les documents associ&#XE9;s (sujets, transparents, etc.) contiennent
+encore certainement des erreurs et/ou des impr&#XE9;cisions. Merci de signaler vos
+remarques, vos suggestions ou vos interrogations &#XE0;
+<a href="mailto:Xavier.Cregut@enseeiht.fr">Xavier Cr&#XE9;gut
+&lt;Prenom.Nom@enseeiht.fr&gt;</a>.</p><p><br>
+<br>
+</p><p>Ce module est compos&#XE9; de :
+</p><ul class="itemize"><li class="li-itemize">
+<a href="#CMNP">Cours asynchrones (pas de pr&#XE9;sentiel)</a>
+</li><li class="li-itemize"><a href="#SN1ATOB">S&#XE9;ances</a>
+</li><li class="li-itemize"><a href="#Projets">Projets</a>
+</li><li class="li-itemize"><a href="#Ressources">Ressources</a>
+</li></ul><p><br>
+</p>
+<h2 id="sec1" class="section">1&#X2003;<a id="CMNP">Cours asynchrones</a></h2>
+<p>Voici les supports de cours qui sont &#XE0; lire avant les TD/TP.
+Ces consignes peuvent &#XEA;tre retrouv&#XE9;es dans le fichier
+<a href="CONTENU/cours-consignes-main.pdf">cours-consignes-main.pdf</a></p><ul class="itemize"><li class="li-itemize">
+<a href="CONTENU/to-1sn-2023-cm-introduction-sujet.pdf">Pr&#XE9;sentation de l&#X2019;UE</a>.</li><li class="li-itemize"><a href="CONTENU/to-1sn-2023-cm-classes-sujet.pdf">Classes</a> (environ 90&#X2019;) et les
+	<a href="CONTENU/to-1sn-2023-questions-classes-sujet.pdf">quelques questions sur le
+	cours</a> : avant le TD 1 (23 janvier) :
+	<ol class="enumerate" type=1><li class="li-enumerate">
+		 Modularite : Classe (22)<p>	</p></li><li class="li-enumerate">	 Constructeurs et destructeur (46)<p>	</p></li><li class="li-enumerate">	 Masquage d&#X2019;information (61)<p>	</p></li><li class="li-enumerate">	 Membres de classe : 82<p>	</p></li><li class="li-enumerate">	 Programmation imp&#XE9;rative : 92 (le petit questionnaire au d&#XE9;but est
+		l&#XE0; pour v&#XE9;rifier que vous avez compris les points
+		essentiels)
+	</li><li class="li-enumerate">	 Tests unitaires avec JUnit : 156 (utilis&#XE9;s au TP 2)<p>	</p></li><li class="li-enumerate">	 Fabriques statiques (207, abord&#XE9;es au TD 1), ellipse (211)...<p>	</p></li><li class="li-enumerate">	 Il est bien s&#XFB;r conseill&#XE9; de lire tous les transparents du
+		support m&#XEA;me s&#X2019;ils ne sont pas mentionn&#XE9;s explicitement dans la
+		liste ci-dessus.<p>	</p></li></ol></li><li class="li-itemize"><a href="CONTENU/to-1sn-2023-cm-relations-sujet.pdf">Relations entre classes</a> (environ 30&#X2019;) : avant
+		le TD 2 (6 f&#XE9;vrier).</li><li class="li-itemize"><a href="CONTENU/to-1sn-2023-cm-interfaces-genericite-sujet.pdf">Interface et G&#XE9;n&#XE9;ricit&#XE9;</a> (environ 90&#X2019;) :
+	avant le TD 2 et TP 4 (6 f&#XE9;vrier). Ces deux notions sont
+	ind&#XE9;pendantes m&#XEA;me si elles sont regroup&#XE9;es sur le m&#XEA;me support.
+	La partie interface sera un peu utilis&#XE9;e sur le mini-projet (PR01).</li><li class="li-itemize"><a href="CONTENU/to-1sn-2023-cm-heritage-sujet.pdf">H&#XE9;ritage &#X2013; Classes abstraites &#X2013;
+	R&#XE9;utilisation</a> (120&#X2019;) : avant le TP 5 (11 f&#XE9;vrier) et le TD 3
+	(11 f&#XE9;vrier).</li><li class="li-itemize"><a href="CONTENU/to-1sn-2023-cm-exceptions-sujet.pdf">Exceptions</a> (environ 1h30) :
+	avant le TD 4 (20 f&#XE9;vrier).</li><li class="li-itemize">(r&#XE9;visions) <a href="CONTENU/to-1sn-2023-cm-relations-sujet.pdf">Relations entre classes</a> (environ 30&#X2019;) : avant
+		le TD 5 (27 f&#XE9;vrier).</li><li class="li-itemize">UML <a href="CONTENU/to-1sn-2023-cm-use-case-sujet.pdf">diagramme de cas
+	d&#X2019;utilisation</a>, <a href="CONTENU/to-1sn-2023-cm-sequence-sujet.pdf">diagrammes de
+	s&#XE9;quence</a>,
+	
+	<a href="https://www.eyrolles.com/Chapitres/9782212133448/Chap-6_Roques.pdf">diagramme
+	d&#X2019;&#XE9;tats et diagrammes d&#X2019;activit&#XE9;</a><sup><a id="text1" href="to-1sn-2023-deroulement-corrige012.html#note1">1</a></sup> (environ 1h45) :
+	avant le TD 6 (5 mars). </li><li class="li-itemize"><a href="CONTENU/to-1sn-2023-cm-collections-sujet.pdf">Patrons, Structures de donn&#XE9;es et
+	Collections</a> (environ 2h30) : avant le TD 8 (11 mars) et le TP 12 (12
+	mars).
+	</li><li class="li-itemize"><a href="CONTENU/to-1sn-2023-cm-swing-sujet.pdf">Interfaces graphiques avec Java/Swing</a>
+	(environ 1h45) : avant le TD 9 (19 mars) et le TP 14 (26 mars). Il
+	est conseill&#XE9; de lire et travailler ce cours apr&#XE8;s le TD 8 &#XAB; Encore les
+	segments et les points &#XBB; (s&#XE9;ance TD 7, 13 mars).
+	<br>
+	Pour valider la compr&#XE9;hension de ce cours, il est conseill&#XE9; de faire
+	<a href="CONTENU/to-1sn-2023-tuto-swing-sujet.pdf">les exercices suivants</a> avec comme
+	point de d&#XE9;part la classe
+	<a href="CONTENU/TUTO-Swing/ComprendreSwing.java">ComprendreSwing</a>.<p>	 </p><p><span style="color:green"><span style="font-weight:bold">Solution :</span></span><span style="color:green">
+	 Voici un
+	 </span><a href="CONTENU/to-1sn-2023-tuto-swing-corrige.pdf"><span style="color:green">corrig&#XE9;</span></a><span style="color:green"> et les
+	 </span><a href="CONTENU/TUTO-Swingsolution/"><span style="color:green">fichiers correspondants</span></a><span style="color:green">.
+	 </span>
+	 </p></li></ul>
+<h2 id="sec2" class="section">2&#X2003;<a id="SN1ATOB">S&#XE9;ances</a></h2>
+<ul>
+<li><a href="to-1sn-2023-deroulement-corrige001.html">S&#XE9;ance Pr&#XE9;sentation 1 (16/01/2024, 16:15)</a>
+<ul>
+<li><a href="to-1sn-2023-deroulement-corrige001.html#sec4">Introduction 1 : Pr&#XE9;sentation de l&#X2019;UE</a>
+</li></ul>
+</li><li><a href="to-1sn-2023-deroulement-corrige002.html">S&#XE9;ance CM 1 (22/01/2024, 08:00)</a>
+<ul>
+<li><a href="to-1sn-2023-deroulement-corrige002.html#sec6">CM 1 : Abstraction et modularit&#XE9; : classes</a>
+</li></ul>
+</li><li><a href="to-1sn-2023-deroulement-corrige003.html">S&#XE9;ance TD 1 (22/01/2024, 14:00 au 24/01/2024, 14:00)</a>
+<ul>
+<li><a href="to-1sn-2023-deroulement-corrige003.html#sec8">TD 1 : Sp&#XE9;cification et implantation</a>
+</li></ul>
+</li><li><a href="to-1sn-2023-deroulement-corrige004.html">S&#XE9;ance TP 1 (23/01/2024, 08:00 au 24/01/2024, 16:15)</a>
+<ul>
+<li><a href="to-1sn-2023-deroulement-corrige004.html#sec10">TP 1 : Points et segments</a>
+</li></ul>
+</li><li><a href="to-1sn-2023-deroulement-corrige005.html">S&#XE9;ance Projet 1 (23/01/2024, 10:15 au 25/01/2024, 08:00)</a>
+<ul>
+<li><a href="to-1sn-2023-deroulement-corrige005.html#sec12">TP 2 : Tester la classe Point avec JUnit</a>
+</li><li><a href="to-1sn-2023-deroulement-corrige005.html#sec13">TP 3 : Introduction &#XE0; Eclipse</a>
+</li></ul>
+</li><li><a href="to-1sn-2023-deroulement-corrige006.html">S&#XE9;ance Examen 1 (13/05/2024, 10:00)</a>
+<ul>
+<li><a href="to-1sn-2023-deroulement-corrige006.html#sec15">Examen 1 : Examen </a>
+</li></ul>
+</li><li><a href="to-1sn-2023-deroulement-corrige007.html">S&#XE9;ance Oral 1 (28/05/2024, 10:15 au 28/05/2024, 16:15)</a>
+</li></ul>
+<h2 id="sec17" class="section">3&#X2003;<a id="Projets">Projets</a></h2>
+<ul>
+<li><a href="to-1sn-2023-deroulement-corrige008.html">Mini-projet</a>
+</li><li><a href="to-1sn-2023-deroulement-corrige009.html">Projet court</a>
+</li><li><a href="to-1sn-2023-deroulement-corrige010.html">Projet long</a>
+</li></ul>
+<h2 id="sec21" class="section">4&#X2003;<a id="Ressources">Ressources</a></h2>
+<p>En suivant les liens, vous trouverez :
+</p><ul class="itemize"><li class="li-itemize">
+l&#X2019;archive <a href="CONTENU/afficheur.jar">afficheur.jar</a>
+
+et sa <a href="CONTENU/afficheur-doc">documentation</a>.</li><li class="li-itemize">Une version de junit4 : <a href="CONTENU/junit4.jar">junit4.jar</a>.</li><li class="li-itemize"><a href="CONTENU/EXAMENS/">quelques annales</a></li><li class="li-itemize">Le <a href="CONTENU/agile/carnet-de-bord-Agile.pdf">carnet de bord Agile</a> fourni
+par Gille FRAN&#XC7;OIS, son
+<a href="CONTENU/agile/TD3-FormationAgileN7-Produit.pdf">suppl&#XE9;ment (en particulier la charte produit)</a> et le lien
+	sur la vid&#XE9;o
+<a href="https://www.youtube.com/watch?v=3qMpB-UH9kA">&#XAB; La Gestion de
+Projet Agile en deux mots &#XBB;</a> ainsi que le
+<a href="CONTENU/agile/Formation-Agile-N7-TD-2.pptx">support utilis&#XE9; pour le TD 2</a>.</li></ul>
+<ul>
+<li><a href="to-1sn-2023-deroulement-corrige011.html">R&#XE9;ponses &#XE0; quelques questions fr&#XE9;quentes</a>
+</li></ul>
+<!--FOOTER-->
+<hr class="horizontal-rule" style="height:2px"><blockquote class="quote"><em>Ce document a &#XE9;t&#XE9; traduit de L<sup>A</sup>T<sub>E</sub>X par </em><a href="http://hevea.inria.fr"><em>H</em><em><span style="font-size:small"><sup>E</sup></span></em><em>V</em><em><span style="font-size:small"><sup>E</sup></span></em><em>A</em></a></blockquote></body>
+</html>

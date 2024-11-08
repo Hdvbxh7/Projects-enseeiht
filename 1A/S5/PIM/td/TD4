@@ -1,0 +1,89 @@
+Ex 1
+1)
+Type T_pos est enregistrement
+	abs: entier
+	ord: entier
+fin enregistrement
+
+type T_dir est ennumeration(Nord,Est,Sud,Ouest)fin
+
+Type T_rob est enregistrement
+	Sa_Pos: T_pos
+	Sa_dir: T_dir
+fin enregistrement
+2)
+Type T_case est enumeration(lib,occ)
+constante capacite = 50 entier
+Type T_env est tableau(1..capacite,1..capacite) de T_case
+3)
+procedure Avancer(F_R:in out T_Rob,F_E:in T_env)
+	pre:F_R.Sa_dir=Est ^ 1<=F_R.Sa_pos.abs<=capacité ^ 1<=F_R.Sa_pos.ord<=capacite ^F_E(F_R.Sa_pos.abs,F_R.Sa_pos.ord)=lib
+	post:(F_R.Sa_pos.abs=capacite v F_E.Sa_pos.abs+1=capacite, F_R.Sa_pos.ord)=occ^F_R.Sa_dir=Est
+
+R0:Comment "Robot peut avancer vers Est"
+	F_R.Sa_pos.abs<capacite ET ALORS
+	F_E(F_R.Sa_pos.abs+1, F_R.Sa_pos.ord)=lib
+	
+	
+Ex 2
+constante capacité =50 entier
+Type T_tableau est tableau(1..capacite) de entier
+Type T_tab est enregistrement
+	tab: T_tableau
+	nb_el: entier	0<=nb_el<=capacite	
+fin
+
+procedure affecter(F_T: in T_tab)
+--pre: 0<=F_T.nb_el<=capacite
+--post: tableau est affiché
+--test
+
+Comment R0
+	afficher [
+	afficher les elements séparé par , sauf dernier
+	afficher]
+
+Comment "afficher les elements séparé par , sauf dernier"
+	si F_T.nb_el<=0 alors
+		afficher les elements
+	Sinon
+		rien
+	Fin Sinon
+		
+R3: Comment "afficher les elements"
+	pour i de 1 a F_T.nb_el =1 Faire
+		ecrire(F_T.tab(i))
+		ecrire(',')	
+	fin pour
+		
+Ex3
+procedure tri (F_T:in out T_tab)
+	pre: 1<=F_T.nb_el<=capacite
+	post: (pour tout i e[1..F_T.nb_el+1] F_T.tab(i)<=F_T.tab(i+1))
+	^ F_T e Permutations(F_T)
+	
+	Pour i de 2 a F_T.nb_el faire
+		Sauver <-- F_T.tab(i)
+		Trouver la place de de F_T.tab(i) dans F_T.tab(1..i)
+		Decaler
+		Inserer
+	fin pour
+	
+
+
+R2:Comment "Trouver la place de de F_T.tab(i) dans F_T.tab(1..i)"
+	compt<--0
+	Tant Que F_T.tab(i)<F_T.tab(compt) OU compt==i
+		compt<--compt+1
+	fint TQ
+
+R2:Comment "Decaler"
+	
+	
+	
+	
+	
+	
+	
+	
+	

@@ -1,0 +1,60 @@
+
+R0:Jouer au jeu du devin avec l'ordinateur quand il choisit un nombre et vous le devinez
+
+Exemples :
+ 
+    
+    J'ai choisi un nombre compris entre 1 et 999.
+    
+    Proposition n      nb_prop     Etat
+---------------------------------------------------------------------------------    
+    Proposition 1 : => 900      => Trop petit.
+    Proposition 2 : => 10000    => Trop grand.
+    Proposition 3 : => 990      => Trop grand.
+    Proposition 4 : =>988       => Trouvé.
+    
+    condition de victoire validé :
+    Bravo. Vous avez trouvé 988 en 4 essais
+
+R1: Comment "Jouer au jeu du devin avec l'ordinateur quand il choisit un nombre et vous le devinez" ?
+
+    Initialiser le jeu
+	Faire deviner le nombre au joueur
+	Annoncer au joueur sa victoire
+	
+R2:Comment "Initialiser le jeu" ?
+
+	Génerer un nombre aléatoire entre 1 et 999 nb_a_dev:out
+    Initialiser le nombre d'essai a 0 nb_essai:out
+    Ecrire("J'ai choisi un nombre compris entre 1 et 999.")
+
+R2:Comment "Faire deviner le nombre au joueur" ?
+	
+	Répeter 
+	    nb_essai<--nb_essai+1
+		Demander un nombre au joueur nb_prop:out
+		annoncer la position du nombre proposée par rapport au nombre a deviner nb_a_dev,nb_prop:in
+	Jusqu'a nombre du joueur égale à nombre proposée 
+	
+
+R2:Comment "Annoncer au joueur sa victoire" ?
+
+	Ecrire("Bravo.vous avez trouvé " et nb_a_dev et "en" et nb_essai et "essai")  nb_essai,nb_a_dev:in
+
+R3:Comment "annoncer la position du nombre proposée par rapport au nombre a deviner" ? 
+
+    Si nb_prop>nb_a_dev Alors
+        Ecrire("Trop petit.")
+    Sinonsi nb_prop<nb_a_dev Alors
+        Ecrire("Trop grand.")
+    Sinon
+        Ecrire("Trouvé.")
+    FinSi    
+
+R3:Comment "Demander un nombre au joueur" ?
+
+    Ecrire("proposition" et nb_essai et ":")
+    Lire(nb_prop)
+
+
+	

@@ -1,0 +1,2 @@
+find Progs_C -name '*.c' -print|wc -w
+11
