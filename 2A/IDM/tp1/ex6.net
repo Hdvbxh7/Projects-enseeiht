@@ -1,0 +1,13 @@
+net ex6
+pl C1_idle1
+pl C1_wait1
+pl C1_idle2
+pl C1_wait2
+pl R1
+pl R2
+pl G1
+pl G2
+tr Req1 
+tr Req2
+tr Ack 
+tr Lib

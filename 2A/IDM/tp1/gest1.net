@@ -1,0 +1,5 @@
+pl Cl1_G1_Req
+tr Read R1? -> R1_free
+tr Ack R1_free Cl1_G1_Req -> Cl1_work
+
+

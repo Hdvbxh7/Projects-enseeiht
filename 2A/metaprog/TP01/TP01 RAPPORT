@@ -1,0 +1,21 @@
+TP1
+
+1.2.1
+no diagram
+list: multiplication,addiction,negation,constante,Accesvariable,expression unaire, expression binaire
+
+1.2.2
+
+elle correspondent aux fonctions sur chaque opération
+(expressions arithmétque)
+
+1.2.3
+Il s'agit du symbole jker qui permet de choisir le retour à l'implémentation de l'interface
+
+1.2.4
+cela permet d'avoir un même retour sur ces fonctions sans qu'il soit défini avant son implémentation
+
+1.2.5
+Afficheur infixe est une implementation de la classe visiteur expression qui renvoi une string de l'expression
+
+
