@@ -1,14 +1,14 @@
-/** La classe Assert définit des méthodes de vérification.  Pour l'instant, la
- * seule méthode de vérification est assertTrue mais d'autres pourraient être
- * définies (voir JUnit).
+/** La classe Assert dfinit des mthodes de vrification.  Pour l'instant, la
+ * seule mthode de vrification est assertTrue mais d'autres pourraient tre
+ * dfinies (voir JUnit).
  *
- * @author	Xavier Crégut
+ * @author	Xavier Crgut
  * @version	$Revision: 1.1 $
  */
 abstract public class Assert {
 
-	/** Vérifier que la condition est vraie.
-	 * @param condition la condition à vérifier
+	/** Vrifier que la condition est vraie.
+	 * @param condition la condition  vrifier
 	 */
 	static public void assertTrue(boolean condition) {
 		if (! condition) {

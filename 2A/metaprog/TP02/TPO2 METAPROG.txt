@@ -1,0 +1,5 @@
+1)On préfére récupérer les classes public auxquels aura accés l'utilisateur ainsi que les classes publics hérités. Car ce sont les classes que nous voudrons tester
+
+2)En créant une méthode par défaut
+
+3)

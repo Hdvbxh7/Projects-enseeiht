@@ -1,14 +1,14 @@
-/** La classe Monnaie est caractérisée par une valeur et une devise.  Deux
- * monnaies peuvent être ajoutées ou retranchées.
+/** La classe Monnaie est caractrise par une valeur et une devise.  Deux
+ * monnaies peuvent tre ajoutes ou retranches.
  *
- * @author	Xavier Crégut
+ * @author	Xavier Crgut
  * @version	$Revision: 1.1 $
  */
 public class Monnaie {
 	private int valeur;
 	private String devise;
 
-	/** Initialiser une monnaie à partir de sa valeur de et sa devise.
+	/** Initialiser une monnaie  partir de sa valeur de et sa devise.
 	 * @param valeur valeur de la monnaie
 	 * @param devise devise de la monnaie
 	 */
@@ -31,7 +31,7 @@ public class Monnaie {
 		return this.devise;
 	}
 
-	/** Ajouter une autre monnaie à cette devise.
+	/** Ajouter une autre monnaie  cette devise.
 	 * @param autre l'autre devise
 	 * @depend - <send> - DeviseInvalideException
 	 */
@@ -40,7 +40,7 @@ public class Monnaie {
 		this.valeur += autre.valeur;
 	}
 
-	/** Retrancher une autre monnaie à cette devise.
+	/** Retrancher une autre monnaie  cette devise.
 	 * @param autre l'autre devise
 	 * @depend - <send> - DeviseInvalideException
 	 */

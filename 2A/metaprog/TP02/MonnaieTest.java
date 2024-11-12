@@ -1,5 +1,5 @@
 /** Classe regroupant les tests unitaires de la classe Monnaie.  */
-public class MonnaieTest {
+public class MonnaieTest extends TestDefaut{
 
 	protected Monnaie m1;
 	protected Monnaie m2;
