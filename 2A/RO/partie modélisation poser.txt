@@ -1,0 +1,14 @@
+partie modélisation :poser le probléme avant de le résoudre à savoir faire
+grille de modélisation: 
+					-quels sont les variables de décision? (les décisions que j'ai le droit de prendre)
+					-quel est la fonction objectif? (monoobjectif -> multiobjectif) chercher la valeur idéale en maximisant ou en minimisant
+					multiobjectif -> les variables de décision sont opposé, et on doit minimiser ce qui peut l'être
+								transfo 
+									-> agrégé, convertir une donnée en l'autre(exemple transport demandetemps et argent, on transforme l'argent en temps ou inversement)
+									-> avec un écart (exemple on prend une valeur auquel on enléve delta sur une des variables de décision puis on cherche la solution qui maximise l'autre pour la valeur trouvé exemple 1000€ pour voyager et on cherhe le chemin le plus rapide)
+					-Quels sont les contraintes?(comment atteindre cette valeur idéale) il peut y avoir des contraintes politiques par exemple que l'ont peut mettre à part(non technique)Bien à revoir réguliérement
+					-quels sont les domaines?(soit R soit N pour nous)
+
+RO-AD aide à la décision: propose une solution à un probléme.
+					
+
