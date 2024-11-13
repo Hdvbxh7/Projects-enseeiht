@@ -4,7 +4,7 @@
  */
 public class Echec extends Error {
 	public Echec() {
-		super("condition non vrifie");
+		super("condition non verifie");
 	}
 	public Echec(String message) {
 		super(message);

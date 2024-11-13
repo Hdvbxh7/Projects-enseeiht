@@ -36,7 +36,7 @@ public class LanceurIndependant {
 
 		// Afficher un bilan
 		System.out.println();
-		System.out.printf("%d tests lancs dont %d checs et %d erreurs.\n",
+		System.out.printf("%d tests lances dont %d echecs et %d erreurs.\n",
 				nbTestsLances, nbEchecs, nbErreurs);
 	}
 
@@ -71,29 +71,31 @@ public class LanceurIndependant {
 			Object objet = classe.getConstructor().newInstance();
 
 			// Excuter les mthods de test
-			preparer.invoke(objet);
 			Method[] Methods = classe.getMethods();
 
 			for(Method m: Methods){
 				if(m.getName().startsWith("test")){
-					try {
-						m.invoke(objet);
-					} catch (InvocationTargetException e) {
-						System.out.println("erreur du test : " + m.getName());
-					}
+						Throwable error;
+						try {
+							this.nbTestsLances+=1;
+							preparer.invoke(objet);
+							m.invoke(objet);
+						} catch	(InvocationTargetException e) {
+							if(e.getCause() instanceof Echec){
+								this.nbEchecs+=1;
+								System.out.println(m.getName() + " : " + e.getCause().getMessage());
+							} else {
+								this.nbErreurs+=1;
+								System.out.println(m.getName() + " : " + e.getCause().getMessage());
+							}
+						} catch (Exception e) {
+							System.out.println(m.getName() + " " + e);
+						}
+
 				}
 			}
-
-		} catch (NullPointerException e) {
-			System.out.println(e);
-		} catch (InvocationTargetException e){
-			System.out.println(e);
-		} catch(IllegalArgumentException e){
-			System.out.println(e);
-		} catch(ExceptionInInitializerError e){
-			System.out.println(e);
 		} catch (Exception e){
-			System.out.println("pas d'erreur");
+			System.out.println(e);
 		}
 
 	}
