@@ -1,0 +1,15 @@
+EX1
+1.1) suppresswarning est utile pour supprimer les warnings inutiles tandis que Deprecated annonce que le programme est dangereux ou obsolete
+1.2)elles sont exploité par le développeur à la compilation qui detcte les programmes obsolétes ou ne s'encombre pas de warning inutile ou déjà pris en compte
+2.1)Oui il y a des erreurs à la compilation
+2.2) Sans cette annotation il n'y aurais pas d'erreur à la compilation
+2.3)elles sont exploitée à la compilation par le développeur
+3.1)Before est utilisée pour être lancer avant les tests il s'agit de la partie setup et Test annonce les tests. Il peut aussi permettre de détecter les exceptions.
+3.2)on utilise l'extension junit4
+3.3)par le développeur à la phase de test
+
+EX2
+1) 2 : La position (x, y) + la valeur 
+2) De manière totalement arbitraire de la part de l'analyser=ur, les données sont traités dans un ordre bizarre afin d'associer les positions à leurs valeurs.
+3)
+

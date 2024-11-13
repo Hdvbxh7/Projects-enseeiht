@@ -25,7 +25,6 @@ public class Analyseur {
 				Position p = new Position(x, y);
 				double valeur = Double.parseDouble(mots[3]);
 				cumuls.put(p, valeur(p) + valeur);
-				// p.setY(p.getY() + 1);	//  p.y += 1;
 			}
 		} catch (IOException e) {
 			throw new RuntimeException(e);
