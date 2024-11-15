@@ -5,6 +5,7 @@
   */
 public class MonnaieTest2 extends MonnaieTest {
 
+  @UnTest
 	public void testSupplementaire() {
 		// OK.
 	}

@@ -62,9 +62,17 @@ public class LanceurIndependant {
 	{
 		// Rcuprer la classe
 		Class<?> classe = Class.forName(nomClasse);
+
+		/*
 		// Rcuprer les mthodes "preparer" et "nettoyer"
 		Method preparer = this.getPreparer(classe);
 		Method nettoyer = this.getNettoyer(classe);
+		*/
+
+		//Liste des tests à éxécuter
+		ArrayList<Method> Tests = new ArrayList<Method>();
+		ArrayList<Method> Avants = new ArrayList<Method>();
+		ArrayList<Method> Apres = new ArrayList<Method>();
 
 		try{
 			// Instancier l'objet qui sera le rcepteur des tests
@@ -73,33 +81,58 @@ public class LanceurIndependant {
 			// Excuter les mthods de test
 			Method[] Methods = classe.getMethods();
 
+			//tri des methodes
 			for(Method m: Methods){
-				if(m.getName().startsWith("test")){
-						Throwable error;
-						try {
-							this.nbTestsLances+=1;
-							preparer.invoke(objet);
-							m.invoke(objet);
-						} catch	(InvocationTargetException e) {
-							if(e.getCause() instanceof Echec){
-								this.nbEchecs+=1;
-								System.out.println(m.getName() + " : " + e.getCause().getMessage());
-							} else {
-								this.nbErreurs+=1;
-								System.out.println(m.getName() + " : " + e.getCause().getMessage());
-							}
-						} catch (Exception e) {
-							System.out.println(m.getName() + " " + e);
-						}
-
+				if(m.isAnnotationPresent(Avant.class)){
+					Avants.add(m);
+				} else if(m.isAnnotationPresent(UnTest.class)){
+					UnTest t = m.getAnnotation(UnTest.class);
+					if(t.enabled() == true){
+						Tests.add(m);
+					} 
+				} else if(m.isAnnotationPresent(Apres.class)){
+					Apres.add(m);
 				}
 			}
+
+			//Tests
+			for(Method t: Tests){
+				Invocation(Avants,objet);
+				try {
+					this.nbTestsLances+=1;
+					t.invoke(objet);
+					Invocation(Apres,objet);
+				} catch	(InvocationTargetException e) {
+					if(e.getCause() instanceof Echec){
+						this.nbEchecs+=1;
+						System.out.println(t.getName() + " : " + e.getCause().getMessage());
+					} else {
+						this.nbErreurs+=1;
+						System.out.println(t.getName() + " : " + e.getCause().getMessage());
+					}
+				} catch (Exception e) {
+					System.out.println(t.getName() + " " + e);
+				}
+			}
+
 		} catch (Exception e){
 			System.out.println(e);
 		}
 
 	}
 
+	private void Invocation(ArrayList<Method> a,Object o){
+		for(Method p: a){
+			try {
+				p.invoke(o);
+			} catch (Exception e) {
+				System.out.println(p.getName() + " " + e);
+			}
+		}
+
+	}
+
+	/*
 	private Method getPreparer(Class<?> class1){
 		try{
 			return class1.getMethod("preparer");
@@ -115,6 +148,7 @@ public class LanceurIndependant {
 			return null;
 		}
 	}
+	*/
 
 
 	public static void main(String... args) {
