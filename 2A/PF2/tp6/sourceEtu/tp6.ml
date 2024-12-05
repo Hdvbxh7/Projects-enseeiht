@@ -76,7 +76,7 @@ type 't expr =
   | Plus : int expr * int expr -> int expr 
   | Egal : 't expr * 't expr -> bool expr
 
-let eval : type t. t expr -> t =
+let rec eval : type t. t expr -> t =
   fun exp ->
     match exp with
     | Entier n -> n 
