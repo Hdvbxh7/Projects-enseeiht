@@ -1,0 +1,38 @@
+#  GLPK model file created by SUN for RO teaching
+
+
+###############################  Model ###############################
+
+
+###############################  Sets  ###############################
+
+set TACHES; 
+
+set PERSONNES;	
+
+################### Variables ###################
+
+var Q{i in PERSONNES, j in TACHES}, binary; 
+
+
+###################  Constants: Data to load   #########################
+
+param mattaches{i in PERSONNES, j in TACHES};
+
+################### Constraints ###################
+
+
+s.t. RespecteConditionsColonnes{j in TACHES}:
+  sum{i in PERSONNES} Q[i,j] = 1;
+  
+s.t. RespecteConditionsLignes{i in PERSONNES}:
+  sum{j in TACHES} Q[i,j] = 1;
+
+
+###### Objective ######
+
+maximize Bonheur: 
+		sum{i in PERSONNES} sum{j in TACHES} Q[i,j]* mattaches[i,j]; 
+
+
+end;
