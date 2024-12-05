@@ -1,0 +1,37 @@
+###############################  Model ###############################
+
+
+###############################  Sets  ###############################
+
+set CLIENTS; 
+
+
+################### Variables ###################
+
+var Q{i in CLIENTS,j in CLIENTS}, binary; 
+
+
+###################  Constants: Data to load   #########################
+
+param dist{i in CLIENTS, j in CLIENTS};
+
+################### Constraints ###################
+
+
+s.t. surplaceinterdit{j in CLIENTS}:
+        Q[j,j] = 0;
+
+s.t. uniciteCol{j in CLIENTS}:
+    sum{i in CLIENTS} Q[i,j] = 1;
+    
+s.t. uniciteLign{i in CLIENTS}:
+    sum{j in CLIENTS} Q[i,j] = 1;
+
+
+###### Objective ######
+
+minimize distance: 
+		sum{i in CLIENTS} sum{j in CLIENTS} Q[i,j]*dist[i,j]; 
+
+
+end;

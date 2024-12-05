@@ -1,54 +1,74 @@
 Problem:    ModelFluides
-Rows:       9
-Columns:    6
-Non-zeros:  18
-Status:     OPTIMAL
-Objective:  PrixFluide = 9.5 (MINimum)
+Rows:       17
+Columns:    18 (6 integer, 6 binary)
+Non-zeros:  60
+Status:     INTEGER OPTIMAL
+Objective:  PrixFluide = 368 (MINimum)
 
-   No.   Row name   St   Activity     Lower bound   Upper bound    Marginal
------- ------------ -- ------------- ------------- ------------- -------------
-     1 quantitedem[F1]
-                    NS             3             3             =             2 
-     2 quantitedem[F2]
-                    NS             3             3             =             3 
-     3 quantitemag[M1,F1]
-                    NU           2.5                         2.5            -1 
-     4 quantitemag[M1,F2]
-                    NU             1                           1            -2 
-     5 quantitemag[M2,F1]
-                    B            0.5                           1 
-     6 quantitemag[M2,F2]
-                    B              1                           2 
-     7 quantitemag[M3,F1]
-                    B              0                           2 
-     8 quantitemag[M3,F2]
-                    NU             1                           1            -1 
-     9 PrixFluide   B            9.5                             
+   No.   Row name        Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 quantitedem[F1,D1]
+                                   2             2             = 
+     2 quantitedem[F1,D2]
+                                   1             1             = 
+     3 quantitedem[F2,D1]
+                                   0            -0             = 
+     4 quantitedem[F2,D2]
+                                   3             3             = 
+     5 quantitemag[M1,F1]
+                                   1                         2.5 
+     6 quantitemag[M1,F2]
+                                   1                           1 
+     7 quantitemag[M2,F1]
+                                   0                           1 
+     8 quantitemag[M2,F2]
+                                   2                           2 
+     9 quantitemag[M3,F1]
+                                   2                           2 
+    10 quantitemag[M3,F2]
+                                   0                           1 
+    11 achatmag[D1,M1]
+                                   0                          -0 
+    12 achatmag[D1,M2]
+                                   0                          -0 
+    13 achatmag[D1,M3]
+                                -7.5                          -0 
+    14 achatmag[D2,M1]
+                                -7.5                          -0 
+    15 achatmag[D2,M2]
+                                -7.5                          -0 
+    16 achatmag[D2,M3]
+                                   0                          -0 
+    17 PrixFluide                368                             
 
-   No. Column name  St   Activity     Lower bound   Upper bound    Marginal
------- ------------ -- ------------- ------------- ------------- -------------
-     1 Q[M1,F1]     B            2.5             0               
-     2 Q[M2,F1]     B            0.5             0               
-     3 Q[M3,F1]     NL             0             0                           1 
-     4 Q[M1,F2]     B              1             0               
-     5 Q[M2,F2]     B              1             0               
-     6 Q[M3,F2]     B              1             0               
+   No. Column name       Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 Q[M1,F1,D1]                 0             0               
+     2 Q[M2,F1,D1]                 0             0               
+     3 Q[M3,F1,D1]                 2             0               
+     4 Q[M1,F1,D2]                 1             0               
+     5 Q[M2,F1,D2]                 0             0               
+     6 Q[M3,F1,D2]                 0             0               
+     7 Q[M1,F2,D1]                 0             0               
+     8 Q[M2,F2,D1]                 0             0               
+     9 Q[M3,F2,D1]                 0             0               
+    10 Q[M1,F2,D2]                 1             0               
+    11 Q[M2,F2,D2]                 2             0               
+    12 Q[M3,F2,D2]                 0             0               
+    13 F[D1,M1]     *              0             0             1 
+    14 F[D1,M2]     *              0             0             1 
+    15 F[D1,M3]     *              1             0             1 
+    16 F[D2,M1]     *              1             0             1 
+    17 F[D2,M2]     *              1             0             1 
+    18 F[D2,M3]     *              0             0             1 
 
-Karush-Kuhn-Tucker optimality conditions:
+Integer feasibility conditions:
 
 KKT.PE: max.abs.err = 0.00e+00 on row 0
         max.rel.err = 0.00e+00 on row 0
         High quality
 
 KKT.PB: max.abs.err = 0.00e+00 on row 0
-        max.rel.err = 0.00e+00 on row 0
-        High quality
-
-KKT.DE: max.abs.err = 0.00e+00 on column 0
-        max.rel.err = 0.00e+00 on column 0
-        High quality
-
-KKT.DB: max.abs.err = 0.00e+00 on row 0
         max.rel.err = 0.00e+00 on row 0
         High quality
 

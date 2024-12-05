@@ -1,0 +1,98 @@
+Problem:    ModelLivr
+Rows:       19
+Columns:    36 (36 integer, 36 binary)
+Non-zeros:  108
+Status:     INTEGER OPTIMAL
+Objective:  distance = 6 (MINimum)
+
+   No.   Row name        Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 surplaceinterdit[ALPHA]
+                                   0            -0             = 
+     2 surplaceinterdit[C1]
+                                   0            -0             = 
+     3 surplaceinterdit[C2]
+                                   0            -0             = 
+     4 surplaceinterdit[C3]
+                                   0            -0             = 
+     5 surplaceinterdit[C4]
+                                   0            -0             = 
+     6 surplaceinterdit[C5]
+                                   0            -0             = 
+     7 uniciteCol[ALPHA]
+                                   1             1             = 
+     8 uniciteCol[C1]
+                                   1             1             = 
+     9 uniciteCol[C2]
+                                   1             1             = 
+    10 uniciteCol[C3]
+                                   1             1             = 
+    11 uniciteCol[C4]
+                                   1             1             = 
+    12 uniciteCol[C5]
+                                   1             1             = 
+    13 uniciteLign[ALPHA]
+                                   1             1             = 
+    14 uniciteLign[C1]
+                                   1             1             = 
+    15 uniciteLign[C2]
+                                   1             1             = 
+    16 uniciteLign[C3]
+                                   1             1             = 
+    17 uniciteLign[C4]
+                                   1             1             = 
+    18 uniciteLign[C5]
+                                   1             1             = 
+    19 distance                    6                             
+
+   No. Column name       Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 Q[ALPHA,ALPHA]
+                    *              0             0             1 
+     2 Q[C1,C1]     *              0             0             1 
+     3 Q[C2,C2]     *              0             0             1 
+     4 Q[C3,C3]     *              0             0             1 
+     5 Q[C4,C4]     *              0             0             1 
+     6 Q[C5,C5]     *              0             0             1 
+     7 Q[C1,ALPHA]  *              0             0             1 
+     8 Q[C2,ALPHA]  *              1             0             1 
+     9 Q[C3,ALPHA]  *              0             0             1 
+    10 Q[C4,ALPHA]  *              0             0             1 
+    11 Q[C5,ALPHA]  *              0             0             1 
+    12 Q[ALPHA,C1]  *              1             0             1 
+    13 Q[C2,C1]     *              0             0             1 
+    14 Q[C3,C1]     *              0             0             1 
+    15 Q[C4,C1]     *              0             0             1 
+    16 Q[C5,C1]     *              0             0             1 
+    17 Q[ALPHA,C2]  *              0             0             1 
+    18 Q[C1,C2]     *              1             0             1 
+    19 Q[C3,C2]     *              0             0             1 
+    20 Q[C4,C2]     *              0             0             1 
+    21 Q[C5,C2]     *              0             0             1 
+    22 Q[ALPHA,C3]  *              0             0             1 
+    23 Q[C1,C3]     *              0             0             1 
+    24 Q[C2,C3]     *              0             0             1 
+    25 Q[C4,C3]     *              0             0             1 
+    26 Q[C5,C3]     *              1             0             1 
+    27 Q[ALPHA,C4]  *              0             0             1 
+    28 Q[C1,C4]     *              0             0             1 
+    29 Q[C2,C4]     *              0             0             1 
+    30 Q[C3,C4]     *              1             0             1 
+    31 Q[C5,C4]     *              0             0             1 
+    32 Q[ALPHA,C5]  *              0             0             1 
+    33 Q[C1,C5]     *              0             0             1 
+    34 Q[C2,C5]     *              0             0             1 
+    35 Q[C3,C5]     *              0             0             1 
+    36 Q[C4,C5]     *              1             0             1 
+
+Integer feasibility conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output

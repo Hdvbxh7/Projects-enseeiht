@@ -13,7 +13,7 @@ set MAGASINS;
 
 var Q{i in MAGASINS, j in FLUIDES, k in DEMANDEURS}, >=0; 
 
-var F{i in DEMANDEURS, j in MAGASINS},binary;
+var F{i in DEMANDEURS, j in MAGASINS} ,binary;
 
 ###################  Constants: Data to load   #########################
 
@@ -23,9 +23,11 @@ param flmagst{i in MAGASINS, j in FLUIDES};
 
 param flmagp{i in MAGASINS, j in FLUIDES};
 
-param MDexp{i in DEMANDEURS, j in MAGASIN}
+param MDexp{i in DEMANDEURS, j in MAGASINS};
 
-param MDexpc{i in DEMANDEURS, j in MAGASIN}
+param MDexpc{i in DEMANDEURS, j in MAGASINS};
+
+param sumfl := sum{m in MAGASINS} sum{f in FLUIDES} flmagst[m,f];
 
 ################### Constraints ###################
 
@@ -36,14 +38,14 @@ s.t. quantitedem{j in FLUIDES, k in DEMANDEURS}:
 s.t. quantitemag{i in MAGASINS,j in FLUIDES}:
   sum{k in DEMANDEURS} Q[i,j,k] <= flmagst[i,j];
   
-s.t. pf{i in DEMANDEURS,j in MAGASINS}
-    F[i,j] = ((sum{k in FLUIDES} Q[j,k,i]) > 0)
-
+s.t. achatmag{i in DEMANDEURS,j in MAGASINS}:
+    (sum{k in FLUIDES} Q[j,k,i]) <= sumfl * F[i,j];
+  
 
 ###### Objective ######
 
 minimize PrixFluide: 
-		(sum{i in MAGASINS} sum{j in FLUIDES} sum{k in DEMANDEURS} Q[i,j,k]* (flmagp[i,j] + MDexpc[i,k])) + sum{i in DEMANDEURS} sum{j in MAGASINS} F[i,j]*MDexp; 
+		(sum{i in MAGASINS} sum{j in FLUIDES} sum{k in DEMANDEURS} Q[i,j,k]* (flmagp[i,j] + MDexpc[k,i])) + sum{i in DEMANDEURS} sum{j in MAGASINS} F[i,j] * MDexp[i,j]; 
 
 
 end;
