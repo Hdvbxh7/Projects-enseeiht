@@ -2,7 +2,7 @@
 
 data;
 
-set CLIENTS := 
+set CLIENTSDEP := 
 ALPHA
 C1
 C2
@@ -10,7 +10,14 @@ C3
 C4
 C5;
 
-set dist: ALPHA C1 C2 C3 C4 C5 :=
+set CLIENTS :=
+C1
+C2
+C3
+C4
+C5;
+
+param dist: ALPHA C1 C2 C3 C4 C5 :=
 ALPHA 0 1 1 10 12 12
 C1 1 0 1 8 10 11
 C2 1 1 0 8 11 10
