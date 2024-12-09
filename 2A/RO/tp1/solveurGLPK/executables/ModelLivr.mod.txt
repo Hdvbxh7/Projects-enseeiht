@@ -1,0 +1,33 @@
+###############################  Model ###############################
+###############################  Sets  ###############################
+set CLIENTSDEP; 
+set CLIENTS;
+
+################### Variables ###################
+var Q{i in CLIENTSDEP,j in CLIENTSDEP}, binary; 
+var ORDRE{i in CLIENTSDEP}, integer;
+
+###################  Constants: Data to load   #########################
+param dist{i in CLIENTSDEP, j in CLIENTSDEP};
+param NombrSomm := sum{i in CLIENTSDEP} 1;
+
+################### Constraints ###################
+s.t. surplaceinterdit{j in CLIENTSDEP}:
+        Q[j,j] = 0;
+
+s.t. uniciteCol{j in CLIENTSDEP}:
+    sum{i in CLIENTSDEP} Q[i,j] = 1;
+    
+s.t. uniciteLign{i in CLIENTSDEP}:
+    sum{j in CLIENTSDEP} Q[i,j] = 1;
+
+s.t. SansSousBoucle{i in CLIENTS,j in CLIENTSDEP}:
+	(ORDRE[i] + (1 - Q[i,j] ) * (NombrSomm+1)) >= ORDRE[j] +1;
+
+s.t. Ordre{i in CLIENTSDEP}:
+	ORDRE[i] >=1;
+	
+###### Objective ######
+minimize distance: 
+		sum{i in CLIENTSDEP} sum{j in CLIENTSDEP} Q[i,j]*dist[i,j]; 
+end;
