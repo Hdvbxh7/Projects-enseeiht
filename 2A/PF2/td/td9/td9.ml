@@ -17,14 +17,15 @@
     | _ -> fibo (n-1) + fibo (n-2)
     (* kfibo : int -> (int -> 'a ) -> 'a *)
     let rec kfibo n k =
-      | 0 | 1 -> k 1
+      match n with
+      | (0 | 1) -> k 1
       | _ -> kfibo (n-2)
               (fun fib_n_2 -> kfibo (n-1)
               (fun fib_n_1 -> k (fib_n_2 + fib_n_1)));;
 
-  let fibo' n = kfibon (fun fib_n -> fib_n);;
+  let fibo' n = kfibo n (fun fib_n -> fib_n);;
 
-.
+
 (* 3 *)
 
 
