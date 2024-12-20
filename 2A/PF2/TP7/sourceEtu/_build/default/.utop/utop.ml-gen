@@ -35,6 +35,6 @@ Clflags.include_dirs :=
   ; "/applications/opam-4.11.0/4.11.0/lib/uutf"
   ; "/applications/opam-4.11.0/4.11.0/lib/xdg"
   ; "/applications/opam-4.11.0/4.11.0/lib/zed"
-  ; "/home/tgz8009/projets/Projects-enseeiht/2A/PF2/TP7/sourceEtu/_build/default/.tp7_etu.objs/byte"
+  ; "/home/tgz8009/projet maj/Projects-enseeiht/2A/PF2/TP7/sourceEtu/_build/default/.tp7_etu.objs/byte"
   ];
 UTop_main.main ();

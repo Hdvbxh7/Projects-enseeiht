@@ -32,11 +32,16 @@ Approximation de la solution du problème
 """
 function cauchy(g::Vector{<:Real}, H::Matrix{<:Real}, Δ::Real; tol_abs::Real = 1e-10)
     if ( norm(g) < tol_abs )
-        s = zeros(length(g))
-    else
-        t = ( norm(g)^2 ) / ( g' * H * g)
-        t = min( t , Δ/norm(g) )
-        s = - t * g
+        return s = zeros(length(g));
     end
+    
+    b= - norm(g)^2
+    a= (g' * H * g)
+    if (a <= 0)
+        t = Δ/norm(g)
+    else
+        t = min(Δ/norm(g),-b/a)
+    end
+    s = - t * g;
     return s
 end

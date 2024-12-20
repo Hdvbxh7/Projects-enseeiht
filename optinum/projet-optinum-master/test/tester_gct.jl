@@ -38,7 +38,6 @@ function tester_gct(gct::Function)
         Δ = 3         # sol = min global  
         s = gct(g,H,Δ)
         Test.@test  s ≈ -H\g atol = tol_test
-
         # le cas test 2 bis matrice avec 1 vp < 0 et 1 vp > 0
         g = [1,2]
         H = [1 0 ; 0 -1]

@@ -54,15 +54,64 @@ du gradient conjugué tronqué.
 """
 function regions_de_confiance(f::Function, gradf::Function, hessf::Function, x0::Vector{<:Real};
     max_iter::Integer=5000, tol_abs::Real=1e-10, tol_rel::Real=1e-8, epsilon::Real=1, 
-    Δ0::Real=2, Δmax::Real=10, γ1::Real=0.5, γ2::Real=2, η1::Real=0.25, η2::Real=0.75, algo_pas::String="gct",
-    max_iter_gct::Integer = 2*length(x0))
+    delta0::Real=2, deltamax::Real=10, γ1::Real=0.5, γ2::Real=2, η1::Real=0.25, η2::Real=0.75, algo_pas::String="gct",
+    maxitergct::Integer = 2*length(x0))
 
     #
     x_sol = x0
     f_sol = f(x_sol)
     flag  = -1
     nb_iters = 0
+    deltak = delta0
     xs = [x0] # vous pouvez faire xs = vcat(xs, [xk]) pour concaténer les valeurs
-
+    
+    condition = !( norm(gradf(x_sol)) <= max( ( tol_rel*norm( gradf(x0) ) ),tol_abs ) )
+    while condition
+        if algo_pas=="gct"
+            sk = gct(gradf(x_sol), hessf(x_sol), deltak;max_iter=maxitergct)
+        else
+            sk = cauchy(gradf(x_sol),hessf(x_sol),deltak;tol_abs)
+        end
+        xk = x_sol
+        
+        mk= f_sol + transpose(gradf(x_sol)) * sk + 0.5 * transpose(sk)* hessf(x_sol) * sk 
+        
+        ρk= (f_sol - f(x_sol + sk))/(f_sol − mk)
+        
+        if ρk ≥ η1
+            x_sol = x_sol + sk 
+        end
+        if ρk ≥ η2
+            deltak = min(γ2 * deltak,deltamax)
+        elseif ρk ≥ η1
+            deltak = deltak
+        else
+            deltak = γ1 * deltak
+        end
+                    
+        nb_iters = nb_iters + 1
+        xs = vcat(xs, [x_sol])  
+        f_sol = f(x_sol)
+        if ρk ≥ η1
+            cond1 = norm(x_sol-xk) <= ( epsilon * max( (tol_rel*norm(xk)),tol_abs ) )
+            cond2 = abs( f_sol-f(xk) ) <= ( epsilon* max( tol_rel*abs( f(xk) ), tol_abs ) )
+        else
+            cond1=false
+            cond2=false
+        end
+        cond0  = norm( gradf(x_sol) ) <= max( ( tol_rel*norm( gradf(x0) ) ),tol_abs )
+        cond3 = ( nb_iters == max_iter ) 
+        
+        if cond0
+            flag = 0
+        elseif cond1
+            flag = 1
+        elseif cond2
+            flag = 2
+        elseif cond3
+            flag = 3
+        end
+        condition = !cond0 && !cond1 && !cond2 && !cond3
+    end
     return x_sol, f_sol, flag, nb_iters, xs
 end

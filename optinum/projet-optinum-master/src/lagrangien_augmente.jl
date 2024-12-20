@@ -69,7 +69,67 @@ function lagrangien_augmente(f::Function, gradf::Function, hessf::Function,
     nb_iters = 0
     μs = [μ0] # vous pouvez faire μs = vcat(μs, μk) pour concaténer les valeurs
     λs = [λ0]
-
+    
+    beta=0.9
+    eta=0.1258925
+    alpha=0.1
+    epsilon=1/μ0
+    epsilonk=epsilon
+    etak=eta/((μ0)^alpha)
+    lambdak1=λ0
+    nuk1=μ0
+    lambdak=lambdak1
+    nuk=nuk1
+    one=fill(1,1,size(c(x_sol),2))
+    
+    function L(x)
+         return (f(x) + lambdak'*c(x) + (nuk/τ)*norm(c(x))*norm(c(x)))
+     end
+        
+   function gradL(x)
+      return (gradf(x)+one*gradc(x)*lambdak+nuk*gradc(x)*c(x))
+   end
+        
+    function hessL(x) 
+         return (hessf(x) + one*lambdak * hessc(x) + nuk*gradc(x)*gradc(x) + nuk*one*c(x)*gradc(x)^2 )
+     end
+    
+    condition = !( norm(gradf(x_sol)) <= max( ( tol_rel*norm( gradf(x0) ) ),tol_abs ) )
+    while condition
+        lambdak=lambdak1
+        nuk=nuk1
+        xk=x_sol
+        if(algo_noc=="rc-gct")
+            x_sol, f_sol, flag, nb_iters, xs = regions_de_confiance(L, gradL, hessL, x_sol)
+        else
+            x_sol, f_sol, flag, nb_iters, xs = regions_de_confiance(L, gradL, hessL, x_sol;algo_pas="cauchy")
+        end
+        if(norm(c(x_sol))<= etak)
+           lambdak1=lambdak+nuk*c(x_sol)
+           nuk1=nuk
+           epsilonk=epsilonk/nuk
+           etak=etak/(nuk^beta)
+        else
+           lambdak1=lambdak
+            nuk1=τ*nuk
+            epsilonk=epsilon(nuk1)
+            etak=eta/(nuk1)^alpha
+        end
+        μs = vcat(μs, nuk)
+        λs = vcat(λs, lambdak)
+        nb_iters=nb_iters+1
+    
+        cond0  = norm( gradf(x_sol) ) <= max( ( tol_rel*norm( gradf(x0) ) ),tol_abs )
+        cond3 = ( nb_iters == max_iter )    
+        
+        if cond0
+            flag = 0
+        elseif cond1
+            flag = 1
+        end
+        condition = !cond0 && !cond1
+    end
+    f_sol=f(x_sol)
     return x_sol, f_sol, flag, nb_iters, μs, λs
 
 end

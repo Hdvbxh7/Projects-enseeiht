@@ -117,9 +117,13 @@ module FreeFall (F : Frame) =
       fun ((x0,y0),(dx0,dy0)) -> 
 
       let a = Flux.constant (0., -9.81) in
+
       let v = Flux.map (fun (a , b) -> (a +. dx0, b +. dy0)) (integre F.dt a) in
+
       let p = Flux.map (fun (a , b) -> (a +. x0, b +. y0)) (integre F.dt v) in
       Flux.map2 (fun pn vn -> (pn, vn)) p v  
+
+    
 
   end
 
@@ -223,5 +227,28 @@ module Collision (F:Frame) =
 
   let rebond_y y dy = 
     if contact_y y dy then (-.dy) else dy
+
+
+  let rec unless flux cond f_flux =
+    match Flux.uncons flux with
+    | None -> Flux.vide
+    | Some(a, fl) ->
+      if cond a then
+        f_flux a
+      else
+        Flux.cons a (unless fl cond f_flux)
+
+
+  let rec run : etat -> etat Flux.t =
+    fun ((x,y), (dx, dy)) ->
+      let g = 9.81 in
+      let a_flux = Flux.constant (0.0, -.g) in
+      let v_flux = Flux.map (fun (vx, vy) -> (vx+.dx, vy+.dy)) (integre F.dt a_flux) in
+      let x_flux = Flux.map (fun (nx, ny) -> (nx+.x, ny+.y)) (integre F.dt v_flux) in
+      unless (Flux.map2 (fun x v -> (x, v)) x_flux v_flux) (fun ((x,y),(dx,dy)) -> contact_x x dx || contact_y y dy) (fun ((x,y), (dx, dy)) -> run ((x, y), (rebond_x x dx, rebond_y y dy)))
+
+  
+
+  
 
   end

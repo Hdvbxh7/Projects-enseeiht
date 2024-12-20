@@ -223,7 +223,5 @@ module Collision (F:Frame) =
 
   let rebond_y y dy = 
     if contact_y y dy then (-.dy) else dy
-  
-
 
   end
