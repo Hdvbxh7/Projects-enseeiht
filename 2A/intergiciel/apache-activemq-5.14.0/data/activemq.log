@@ -41,3 +41,25 @@
 2024-12-20 10:01:37,417 | WARN  | Transport Connection to: tcp://127.0.0.1:57022 failed: java.io.EOFException | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:57022@61616
 2024-12-20 10:12:18,123 | WARN  | Transport Connection to: tcp://127.0.0.1:57508 failed: java.io.EOFException | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:57508@61616
 2024-12-20 10:12:21,974 | WARN  | Transport Connection to: tcp://127.0.0.1:57510 failed: java.io.EOFException | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:57510@61616
+2024-12-20 12:52:27,542 | INFO  | Apache ActiveMQ 5.14.0 (localhost, ID:carapuce.enseeiht.fr-39937-1734683096843-0:1) is shutting down | org.apache.activemq.broker.BrokerService | ActiveMQ ShutdownHook
+2024-12-20 12:52:27,543 | INFO  | Connector openwire stopped | org.apache.activemq.broker.TransportConnector | ActiveMQ ShutdownHook
+2024-12-20 12:52:27,544 | INFO  | socketQueue interrupted - stopping | org.apache.activemq.transport.tcp.TcpTransportServer | ActiveMQ Transport Server Thread Handler: tcp://0.0.0.0:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+2024-12-20 12:52:27,544 | INFO  | socketQueue interrupted - stopping | org.apache.activemq.transport.tcp.TcpTransportServer | ActiveMQ Transport Server Thread Handler: amqp://0.0.0.0:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+2024-12-20 12:52:27,544 | INFO  | Connector amqp stopped | org.apache.activemq.broker.TransportConnector | ActiveMQ ShutdownHook
+2024-12-20 12:52:27,545 | INFO  | Could not accept connection during shutdown  : java.lang.InterruptedException | org.apache.activemq.broker.TransportConnector | ActiveMQ Transport Server Thread Handler: amqp://0.0.0.0:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+2024-12-20 12:52:27,545 | INFO  | Could not accept connection during shutdown  : java.lang.InterruptedException | org.apache.activemq.broker.TransportConnector | ActiveMQ Transport Server Thread Handler: tcp://0.0.0.0:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+2024-12-20 12:52:27,546 | INFO  | socketQueue interrupted - stopping | org.apache.activemq.transport.tcp.TcpTransportServer | ActiveMQ Transport Server Thread Handler: stomp://0.0.0.0:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+2024-12-20 12:52:27,545 | INFO  | Connector stomp stopped | org.apache.activemq.broker.TransportConnector | ActiveMQ ShutdownHook
+2024-12-20 12:52:27,547 | INFO  | Could not accept connection during shutdown  : java.lang.InterruptedException | org.apache.activemq.broker.TransportConnector | ActiveMQ Transport Server Thread Handler: stomp://0.0.0.0:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+2024-12-20 12:52:27,547 | INFO  | socketQueue interrupted - stopping | org.apache.activemq.transport.tcp.TcpTransportServer | ActiveMQ Transport Server Thread Handler: mqtt://0.0.0.0:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+2024-12-20 12:52:27,547 | INFO  | Connector mqtt stopped | org.apache.activemq.broker.TransportConnector | ActiveMQ ShutdownHook
+2024-12-20 12:52:27,550 | INFO  | Could not accept connection during shutdown  : java.lang.InterruptedException | org.apache.activemq.broker.TransportConnector | ActiveMQ Transport Server Thread Handler: mqtt://0.0.0.0:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+2024-12-20 12:52:27,557 | INFO  | Connector ws stopped | org.apache.activemq.broker.TransportConnector | ActiveMQ ShutdownHook
+2024-12-20 12:52:27,558 | INFO  | PListStore:[/home/tgz8009/projetmaj/Projects-enseeiht/2A/intergiciel/apache-activemq-5.14.0/data/localhost/tmp_storage] stopped | org.apache.activemq.store.kahadb.plist.PListStoreImpl | ActiveMQ ShutdownHook
+2024-12-20 12:52:27,559 | INFO  | Stopping async queue tasks | org.apache.activemq.store.kahadb.KahaDBStore | ActiveMQ ShutdownHook
+2024-12-20 12:52:27,559 | INFO  | Stopping async topic tasks | org.apache.activemq.store.kahadb.KahaDBStore | ActiveMQ ShutdownHook
+2024-12-20 12:52:27,559 | INFO  | Stopped KahaDB | org.apache.activemq.store.kahadb.KahaDBStore | ActiveMQ ShutdownHook
+2024-12-20 12:52:27,577 | INFO  | Apache ActiveMQ 5.14.0 (localhost, ID:carapuce.enseeiht.fr-39937-1734683096843-0:1) uptime 3 hours 27 minutes | org.apache.activemq.broker.BrokerService | ActiveMQ ShutdownHook
+2024-12-20 12:52:27,578 | INFO  | Apache ActiveMQ 5.14.0 (localhost, ID:carapuce.enseeiht.fr-39937-1734683096843-0:1) is shutdown | org.apache.activemq.broker.BrokerService | ActiveMQ ShutdownHook
+2024-12-20 12:52:27,579 | INFO  | Closing org.apache.activemq.xbean.XBeanBrokerFactory$1@481a996b: startup date [Fri Dec 20 09:24:56 CET 2024]; root of context hierarchy | org.apache.activemq.xbean.XBeanBrokerFactory$1 | ActiveMQ ShutdownHook
+2024-12-20 12:52:27,590 | INFO  | Destroying Spring FrameworkServlet 'dispatcher' | /admin | ActiveMQ ShutdownHook
