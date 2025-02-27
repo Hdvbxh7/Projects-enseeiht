@@ -1,0 +1,6 @@
+tests__Ast
+tests__Lexer
+tests__MiniML
+tests__Parser
+tests__Semantics
+tests__Types
