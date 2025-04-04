@@ -26,6 +26,7 @@ r_put_on(X,Y):-clear(X),clear(Y),put_on(X,Y).
 %tri
 triee(Z,[]):-true.
 triee(on(X1,Y1),[on(X2,Y2)|T]):-Y1\=X2,triee(on(X1,Y1),T).
+triee([on(X,Y)]).
 triee([on(X,Y)|T]):-triee(on(X,Y),T),triee(T).
 
 /*si on lui demande de le faire en l'état, comme c n'est plus libre à la fin, on n'obtient pas la bonne configuration à la fin*/
